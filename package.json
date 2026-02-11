@@ -1,0 +1,27 @@
+{
+  "name": "sam-task-backend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/https-github-com-sam/Back-samtask.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/https-github-com-sam/Back-samtask/issues"
+  },
+  "homepage": "https://github.com/https-github-com-sam/Back-samtask#readme",
+  "description": "",
+  "dependencies": {
+    "@supabase/supabase-js": "^2.95.3",
+    "cors": "^2.8.6",
+    "dotenv": "^17.2.4",
+    "express": "^5.2.1",
+    "nodemon": "^3.1.11"
+  }
+}

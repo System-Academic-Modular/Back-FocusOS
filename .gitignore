@@ -1,0 +1,11 @@
+# Arquivos necessarios paar o funcionamento do projeto local
+# que nao podem ser enviados ao repositorio
+
+# arquivo de dependencias
+node_modules
+
+# gerenciador de dependencias
+package-lock.json
+
+# variaveis de ambiente
+.env
