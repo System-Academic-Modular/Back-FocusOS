@@ -1,0 +1,49 @@
+{
+  "info": {
+    "_postman_id": "b47445dd-69ec-4b59-a957-ef1ce7b2a208",
+    "name": "SAMTASK",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "43659515"
+  },
+  "item": [
+    {
+      "name": "ADICIONAIS",
+      "item": [
+        {
+          "name": "API HEALTH",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/health",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "health"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "DB TEST",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/db-test",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "db-test"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
