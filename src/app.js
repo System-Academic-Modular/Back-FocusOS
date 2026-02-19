@@ -9,6 +9,9 @@ require("dotenv").config()
 
 // const pool = require("./config/db")
 
+// Importacao dos arquivos de rotas
+const authRoutes = require("./routes/auth.route")
+
 // Cria uma instacia do servidor express
 const app = express()
 
@@ -23,5 +26,8 @@ app.get("/health", (req, res) => {
         service: "API samTask"
     })
 })
+
+// Rotas do sistema
+app.use("/auth", authRoutes)
 
 module.exports = app
