@@ -3,7 +3,6 @@ const cors = require("cors")
 
 require("dotenv").config()
 
-const { supabase } = require("./config/supabase")
 const authMiddleware = require("./middlewares/auth.middleware")
 const authRoutes = require("./routes/auth.route")
 const categoriaRoutes = require("./routes/categoria.route")
@@ -25,31 +24,6 @@ app.get("/health", (req, res) => {
     status: "ok",
     service: "API samTask"
   })
-})
-
-app.get("/db-test", async (req, res) => {
-  try {
-    const response = await supabase.from("usuario").select("key_usuario").limit(1)
-
-    if (response.error) {
-      return res.status(500).json({
-        status: "error",
-        message: "Falha ao conectar no banco",
-        error: response.error.message
-      })
-    }
-
-    return res.status(200).json({
-      status: "ok",
-      message: "Conexao com o banco realizada com sucesso"
-    })
-  } catch (error) {
-    return res.status(500).json({
-      status: "error",
-      message: "Erro inesperado ao testar conexao com o banco",
-      error: error.message
-    })
-  }
 })
 
 app.use("/auth", authRoutes)
