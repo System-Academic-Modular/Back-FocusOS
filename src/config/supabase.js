@@ -1,16 +1,26 @@
-const { createClient } = require('@supabase/supabase-js')
+const { createClient } = require("@supabase/supabase-js")
 
-const supabaseAdmin = createClient(
-  process.env.SUPABASE_URL,
-  process.env.SUPABASE_SERVICE_ROLE_KEY
-)
+function getRequiredEnv(name) {
+  const value = process.env[name]
 
-const supabaseAnon = createClient(
-  process.env.SUPABASE_URL,
-  process.env.SUPABASE_ANON_KEY
+  if (!value) {
+    throw new Error(`Variavel de ambiente obrigatoria nao encontrada: ${name}`)
+  }
+
+  return value
+}
+
+const supabase = createClient(
+  getRequiredEnv("SUPABASE_URL"),
+  getRequiredEnv("SUPABASE_SERVICE_ROLE_KEY"),
+  {
+    auth: {
+      autoRefreshToken: false,
+      persistSession: false
+    }
+  }
 )
 
 module.exports = {
-  supabaseAdmin,
-  supabaseAnon
+  supabase
 }
